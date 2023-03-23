@@ -1,0 +1,74 @@
+﻿@model Sis_RosangelaCunha.Models.Usuario
+
+<form id="frmUsuario">
+
+    @Html.HiddenFor(model => model.UsuarioId)
+
+    <div class="row">
+        <div class="form-group">
+            <label for="Login" class="col-md-3">Login :</label>
+            <div class="col-md-9">
+                @Html.EditorFor(model => model.Login, new { htmlAttributes = new { @class = "form-control" } })
+            </div>
+        </div>
+    </div>
+    <br/>
+    <div class="row">
+
+        <div class="form-group">
+            <label for="Senha" class="col-md-3">Senha:</label>
+            <div class="col-md-9">
+                @Html.EditorFor(model => model.Senha, new { htmlAttributes = new { @class = "form-control" } })
+            </div>
+        </div>
+    </div>
+    <br />
+    <div class="row">
+        <div class="form-group">
+            <label for="Nome" class="col-md-3">Nome :</label>
+            <div class="col-md-9">
+                @Html.EditorFor(model => model.Nome, new { htmlAttributes = new { @class = "form-control" } })
+            </div>
+        </div>
+    </div>
+    <br />
+
+    <div class="row">
+        <div class="form-group">
+            <label for="Email" class="col-md-3">E-mail :</label>
+            <div class="col-md-9">
+                @Html.EditorFor(model => model.Email, new { htmlAttributes = new { @class = "form-control" } })
+            </div>
+        </div>
+    </div>
+    <br />
+    <div class="row">
+        <div class="form-group">
+            <label for="Celular" class="col-md-3">Celular :</label>
+            <div class="col-md-9">
+                @Html.EditorFor(model => model.Celular, new { htmlAttributes = new { @class = "form-control telefone" } })
+            </div>
+        </div>
+    </div>
+    <br />
+    <div class="row">
+        <div class="form-group">
+            <label for="EnumPerfilAcesso" class="col-md-3">Perfil de Acesso :</label>
+            <div class="col-md-9">
+                @Html.EnumDropDownListFor(model => model.EnumPerfilAcesso, "Selecione", new { @class = "form-control" })
+            </div>
+        </div>
+    </div>
+    <br />
+    <div class="row">
+        <div class="form-group">
+            <div class="col-md-12 text-right">
+                <a href="#" class="btn btn-success" onclick="SalvarUsuario();">Gravar</a>
+            </div>
+        </div>
+    </div>
+    <br />
+</form>
+
+
+

@@ -1,0 +1,43 @@
+﻿
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>
+        @ViewBag.Title - SICOV
+    </title>
+    @Styles.Render("~/Content/pluginscss")
+    @Scripts.Render("~/bundles/modernizr")
+</head>
+<body id="js-mensagem-alerta" class="layout-externo">
+    <div class="container-fluid">
+        <main class="">
+            <div class="mdl-layout-account">
+                <div class="row">
+                    <div class="col-md-4"></div>
+                    <div class="col-md-4">
+                        <div class="row" style="color: white;">
+                            <div class="col-md-12">
+                                <br />
+                                <blockquote>
+                                    <p>Cred Check Brasil - Distribuidor Serasa Experian</p>
+                                    <small>SICOV<cite title="Source Title">Sistema de Controle de Vendas</cite></small>
+                                </blockquote>
+                            </div>
+                            <div class="col-md-12" style="color: white;">
+                                @RenderBody()
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/pluginsjs")
+    @RenderSection("scripts", false)
+    @*@Html.Partial("_MensagemAlerta")*@
+    @Scripts.Render("~/bundles/sitejs")
+</body>
+</html>

@@ -1,0 +1,36 @@
+﻿@section style{
+    <!-- jQuery UI -->
+    <link href="https://code.jquery.com/ui/1.10.3/themes/redmond/jquery-ui.css" rel="stylesheet" media="screen">
+    <link href="~/Content/css/toastr.css" rel="stylesheet" />
+}
+
+<div class="content-box-large">
+    <div class="panel-heading">
+        <div class="panel-title">Cadastrar Novo Plano</div>
+    </div>
+    <div class="panel-body">
+        <a href="#" class="btn btn-info" onclick="NovoDescricaPlano();">Nova Descrição</a>
+
+        <p>
+
+            <input type="text" class="form-control" id="busca" name="busca" />
+
+            <a href="#" class="btn btn-primary" onclick="Listar();"><i class="glyphicon glyphicon-search"> </i> Buscar</a>
+        </p>
+
+
+        <div id="listardescricoes"></div>
+    </div>
+</div>
+
+
+@section scripts{
+    <script src="https://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
+    <script src="@Url.Content("~/Scripts/vendors/datatables/js/jquery.dataTables.min.js")"></script>
+    <script src="@Url.Content("~/Scripts/vendors/datatables/dataTables.bootstrap.js")"></script>
+    <script src="@Url.Content("~/Scripts/Sicov/descricaoPlano.js")"></script>
+    <script src="@Url.Content("~/Scripts/jquery.validate.js")"></script>
+    <script src="@Url.Content("~/Scripts/toastr.js")"></script>
+}
+
+

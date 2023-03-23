@@ -1,0 +1,45 @@
+﻿@model IEnumerable<Sis_RosangelaCunha.Models.AquisicaoContrato>
+
+<table cellpadding="0" cellspacing="0" border="0" class="table table-striped table-bordered" id="listaaquisicoes">
+    <thead>
+        <tr>
+            <th>
+                Cliente:
+            </th>
+            <th>
+                Data Aquisição:
+            </th>
+            <th>
+                Plano:
+            </th>
+            <th>
+                Login Serasa:
+            </th>
+            <th>Ações</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.objCliente.NomeFantasia)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.DataAquisicao)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.objPlano.ObjDescricaoPlano.Descricao)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.LoginSerasa1)
+                </td>
+                
+                <td>
+                    <a href="#" onclick="EditarAquisicoesContratos(@item.AquisicaoId);"><i class="glyphicon glyphicon-edit"></i></a>
+                    <a href="#" onclick="ExcluirAquisicaoContrato(@item.AquisicaoId);"><i class="glyphicon glyphicon-remove"></i></a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

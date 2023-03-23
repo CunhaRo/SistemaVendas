@@ -1,0 +1,57 @@
+﻿@model Sis_RosangelaCunha.ViewModel.PlanoViewModel
+
+<form id="frmPlano">
+
+    @Html.HiddenFor(model => model.PlanoId)
+
+    <div class="row">
+
+        <div class="form-group">
+            <label for="DescricaoPlano" class="col-md-4">Nome do Plano :</label>
+            <div class="col-md-8">
+                @Html.EditorFor(model => model.NomePlano, new { htmlAttributes = new { @class = "form-control" } })
+            </div>
+
+        </div>
+    </div>
+    <br />
+    <div class="row">
+
+        <div class="form-group">
+            <label for="IdDescricao" class="col-md-4">Descrição :</label>
+            <div class="col-sm-8">
+                @Html.DropDownListFor(model => model.IdDescricao, Model.Descricoes, "Selecione", new { @class = "form-control" })
+            </div>
+        </div>
+    </div>
+    <br />
+    <div class="row">
+        <div class="form-group">
+            <label for="Valor" class="col-md-4">Valor :</label>
+            <div class="col-md-8">
+                @Html.EditorFor(model => model.Valor, new { htmlAttributes = new { @class = "form-control" } })
+            </div>
+        </div>
+    </div>
+    <br />
+    <div class="row">
+        <div class="form-group">
+            <label for="Mensalidades" class="col-md-4"> Tipo de Mensalidade :</label>
+            <div class="col-md-8">
+                @Html.EnumDropDownListFor(model => model.Mensalidades, "Selecione", new { @class = "form-control" })
+            </div>
+        </div>
+
+    </div>
+    <br />
+    
+    <div class="form-group">
+        <div class="col-md-12 text-right">
+            <a href="#" class="btn btn-success" onclick="SalvarPlano();"><i class="fa fa-save"></i> Gravar</a>
+        </div>
+    </div>
+
+</form>
+
+
+

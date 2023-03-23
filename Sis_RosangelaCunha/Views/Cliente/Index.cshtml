@@ -1,0 +1,30 @@
+﻿@section style{
+    <!-- jQuery UI -->
+    <link href="https://code.jquery.com/ui/1.10.3/themes/redmond/jquery-ui.css" rel="stylesheet" media="screen">
+    <link href="~/Content/css/toastr.css" rel="stylesheet" />
+}
+
+<div class="content-box-large">
+    <div class="panel-heading">
+        <div class="panel-title">
+            <h2>Cadastrar Novo Cliente</h2>
+        </div>
+    </div>
+    <div class="panel-body">
+        <a href="#" class="btn btn-info" onclick="NovoCliente();">Novo Cliente</a>
+        <br /><br />
+        <div id="listarclientes"></div>
+    </div>
+</div>
+
+
+@section scripts{
+    <script src="https://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
+    <script src="@Url.Content("~/Scripts/vendors/datatables/js/jquery.dataTables.min.js")"></script>
+    <script src="@Url.Content("~/Scripts/vendors/datatables/dataTables.bootstrap.js")"></script>
+    <script src="@Url.Content("~/Scripts/Sicov/cliente.js")"></script>
+    <script src="@Url.Content("~/Scripts/jquery.validate.js")"></script>
+    <script src="@Url.Content("~/Scripts/toastr.js")"></script>
+}
+
+

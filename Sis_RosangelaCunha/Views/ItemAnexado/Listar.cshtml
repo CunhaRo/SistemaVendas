@@ -1,0 +1,31 @@
+﻿@model IEnumerable<Sis_RosangelaCunha.Models.ItemAnexado>
+<!-- Page Content -->
+<div class="container">
+    <div class="row">
+        @foreach (var item in Model)
+        {
+            <div class="col-lg-3 col-md-4 col-xs-6 thumb">
+
+                <a class="thumbnail" href="#">
+                    @if (item.Nome.Contains("png") || item.Nome.Contains("jpg") || item.Nome.Contains("jpeg"))
+                    {
+                        <img src="/ItemAnexado/GetUploadedFile/?idArquivo=@item.ItensId" alt="@item.Nome" title="@item.Nome" />
+                    }
+                    else
+                    {
+                        <img src="~/Content/images/default.jpg" />
+                    }
+                </a>
+                @item.Nome
+                <a href="/ItemAnexado/GetUploadedFile/?idArquivo=@item.ItensId" alt="Baixar Arquivo" title="Baixar Arquivo">
+                    <i class="fa fa-download"></i>
+                </a>
+                |
+                <a href="javascript:void(0);" onclick="ExcluirArquivo(@item.ItensId);" alt="Excluir Arquivo" title="Excluir Arquivo">
+                    <i class="fa fa-times"></i>
+                </a>
+            </div>
+        }
+    </div>
+</div>
+

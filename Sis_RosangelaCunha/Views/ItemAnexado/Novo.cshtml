@@ -1,0 +1,97 @@
+﻿@model Int16
+@{
+    ViewBag.Title = "Novo";
+}
+
+@section style{
+    
+    <link href="@Url.Content("~/Content/jquey-ui/jquery-ui.css")" rel="stylesheet" />
+    <link href="@Url.Content("~/Scripts/dropzone/basic.css")" rel="stylesheet" />
+    <link href="@Url.Content("~/Scripts/dropzone/dropzone.css")" rel="stylesheet" />
+    <link href="@Url.Content("~/Content/dropzone-main.css")" rel="stylesheet" />
+    
+    <style>
+        .row {
+            margin-top: 10px !important;
+        }
+
+        .thumb {
+            margin: 10px;
+            background-color: #FFF;
+            padding: 10px;
+        }
+    </style>
+}
+
+@section scripts{
+    <script src="@Url.Content("~/Scripts/jquery-ui.min.js")"></script>
+    <script src="@Url.Content("~/Scripts/dropzone/dropzone.js")"></script>
+    <script src="@Url.Content("~/Scripts/dropzone/dropzone-amd-module.min.js")"></script>
+    <script src="@Url.Content("~/Scripts/basic-dropzone.js")"></script>
+    <script src="~/Scripts/Sicov/itemanexdo.js"></script>
+}
+
+
+
+<form id="frmEmpresa" method="post" enctype="multipart/form-data">
+    
+    @Html.Hidden("Id", Model)
+
+    <div class="form-group">
+        <div id="actions" class="row">
+            <div class="col-lg-7">
+                <!-- The fileinput-button span is used to style the file input field as button -->
+                <span class="btn btn-success fileinput-button">
+                    <i class="fa fa-plus"></i>
+                    Adicionar Arquivos...
+                </span>
+            </div>
+            <div class="col-lg-5">
+                <span class="fileupload-process">
+                </span>
+            </div>
+        </div>
+        <div class="table table-striped" class="files" id="previews">
+            <div id="template" class="file-row">
+                <!-- This is used as the file preview template -->
+                <div>
+                    <span class="preview"><img data-dz-thumbnail /></span>
+                </div>
+                <div>
+                    <p class="name" data-dz-name></p>
+                    <strong class="error text-danger" data-dz-errormessage></strong>
+                </div>
+                <div>
+                    <p class="size" data-dz-size></p>
+                    @*<div class="progress progress-striped active" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0">
+                            <div class="progress-bar progress-bar-success" style="width:0%;" data-dz-uploadprogress></div>
+                        </div>*@
+                </div>
+                <div>
+                    <button class="btn btn-primary start fade">
+                        <i class="fa fa-upload"></i>
+                        <span>Upload</span>
+                    </button>
+
+                    <button data-dz-remove class="btn btn-warning cancel fade">
+                        <i class="fa fa-times"></i>
+                        <span>Cancelar</span>
+                    </button>
+                    <button data-dz-remove class="btn btn-danger delete">
+                        <i class="fa-trash"></i>
+                        <span>Excluir</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+
+        <!--ARQUIVOS-->
+        <div id="listaArquivos" class="col-xs-12">
+        </div>
+        
+        
+        <a href="javascript:void(0);" class="btn btn-info" onclick="Upload();">Upload</a>
+
+    </div>
+</form>

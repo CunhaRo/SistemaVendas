@@ -1,0 +1,65 @@
+﻿@model Sis_RosangelaCunha.ViewModel.AgendamentoViewModel
+<form id="frmAgendamento">
+
+    @Html.HiddenFor(model => model.AgendamentoId)
+    @Html.HiddenFor(model => model.IdUsuario)
+
+    <div class="row">
+        <div class="form-group">
+            <label class="col-md-3" for="IdCliente">Clientes :</label>
+            <div class="col-md-9">
+                @Html.DropDownListFor(model => model.IdCliente, Model.Clientes, "Selecione", new { @class = "form-control" })
+            </div>
+        </div>
+    </div>
+    <br />
+    <div class="row">
+        <div class="form-group">
+            <label for="HorarioAgendamento" class="col-md-3">Agendado para :</label>
+            <div class="col-md-9">
+                @Html.EditorFor(model => model.HorarioAgendamento, new { htmlAttributes = new { @class = "form-control datepicker data" } })
+            </div>
+        </div>
+    </div>
+    <br />
+    <div class="row">
+
+        <div class="form-group">
+            <label for="Indicacao" class="col-md-3">Indicação:</label>
+            <div class="col-md-9">
+                @Html.CheckBoxFor(model => model.Indicacao, new { htmlAttributes = new { @class = "form-control" } })
+            </div>
+        </div>
+    </div>
+    <br />
+    <div class="row">
+        <div class="form-group">
+            <label for="IndicadoPor" class="col-md-3">Indicado Por :</label>
+            <div class="col-md-9">
+                @Html.EditorFor(model => model.IndicadoPor, new { htmlAttributes = new { @class = "form-control" } })
+            </div>
+        </div>
+    </div>
+    <br />
+    <div class="row">
+        <div class="form-group">
+            <label for="Status" class="col-md-3">Status :</label>
+            <div class="col-md-9">
+                @Html.EnumDropDownListFor(model => model.Status, "Selecione", new { @class = "form-control" })
+            </div>
+        </div>
+    </div>
+    <br />
+    <div class="row">
+        <div class="form-group">
+            <div class="col-md-12 text-right">
+                <a href="#" class="btn btn-success" onclick="SalvarAgendamento();">Gravar</a>
+            </div>
+        </div>
+    </div>
+    <br />
+</form>
+
+
+
+

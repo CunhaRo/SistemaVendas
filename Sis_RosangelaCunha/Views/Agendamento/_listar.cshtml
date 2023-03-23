@@ -1,0 +1,44 @@
+﻿@model IEnumerable<Sis_RosangelaCunha.Models.Agendamento>
+
+<table cellpadding="0" cellspacing="0" border="0" class="table table-hover dt-responsive nowrap" id="listaagendamentos">
+    <thead>
+        <tr>
+            <th>
+                Cliente
+            </th>
+            <th>
+                Data Agendamento
+            </th>
+            <th>
+                Indicação
+            </th>
+            <th>
+                Status
+            </th>
+            <th>Ações</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.objCliente.NomeFantasia)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.HorarioAgendamento)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Indicacao)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Status)
+                </td>
+                <td>
+                    <a href="#" onclick="EditarUsuario(@item.AgendamentoId);"><i class="glyphicon glyphicon-edit"></i></a> |
+                    <a href="#" onclick="ExcluirUsuario(@item.AgendamentoId);"><i class="glyphicon glyphicon-remove"></i></a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

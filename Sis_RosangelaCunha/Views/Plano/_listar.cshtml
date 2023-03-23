@@ -1,0 +1,38 @@
+﻿@model IEnumerable<Sis_RosangelaCunha.Models.Plano>
+
+<table cellpadding="0" cellspacing="0" border="0" class="table table-striped table-bordered" id="listaplanos">
+    <thead>
+        <tr>
+            <th>
+                Descricao Plano
+            </th>
+            <th>
+                Valor
+            </th>
+            <th>
+                Mensalidades
+            </th>
+            <th>Ações</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.NomePlano)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Valor)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Mensalidades)
+                </td>
+                <td>
+                    <a href="#" onclick="EditarPlano(@item.PlanoId);"><i class="glyphicon glyphicon-edit"></i></a> |
+                    <a href="#" onclick="ExcluirPlano(@item.PlanoId);"><i class="glyphicon glyphicon-remove"></i></a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

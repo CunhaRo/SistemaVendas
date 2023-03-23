@@ -1,0 +1,19 @@
+﻿@model Sis_RosangelaCunha.Models.ItemAnexado
+@{
+    ViewBag.Title = "Editar";
+}
+@using (Html.BeginForm())
+{
+    <div class="form-horizontal">
+        <h2>Novo Usúario</h2>
+        <hr />
+        <div class="=form-group">
+            @Html.LabelFor(model => model.NomeArquivo, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.TextBoxFor(model => model.NomeArquivo, new { @class = "form-control" })
+            </div>
+        </div>
+        <input type="submit" value="Salvar" class="btn btn-sm btn-success">
+    </div>
+}
+

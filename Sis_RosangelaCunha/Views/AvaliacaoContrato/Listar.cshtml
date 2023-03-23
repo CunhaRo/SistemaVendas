@@ -1,0 +1,53 @@
+﻿@model IEnumerable<Sis_RosangelaCunha.Models.AvaliacaoContrato>
+@{
+    ViewBag.Title = "Listar";
+}
+<h2>Listar Avaliacaoes</h2>
+
+@Html.ActionLink("Nova Avaliacao", "Novo")
+
+<table class="table table-hover table-responsive">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Comentario)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Features)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Features)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Contato)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Treinamento)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Comentario)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Features)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Contato)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Treinamento)
+            </td>
+            <td>
+                <a class="btn btn-default btn-sm" href="@Url.Action("Editar", "Usuario", new {item.AvaliacaoId})"><i class="glyphicon glyphicon-pencil"></i></a>
+
+                <a class="btn btn-default btn-sm" href="@Url.Action("Excluir", "Usuario", new { item.AvaliacaoId})"><i class="glyphicon glyphicon-trash"></i></a>
+            </td>
+        </tr>
+    }
+</table>
+

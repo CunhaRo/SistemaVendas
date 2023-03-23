@@ -1,0 +1,46 @@
+﻿@section style{
+    <!-- jQuery UI -->
+    <link href="https://code.jquery.com/ui/1.10.3/themes/redmond/jquery-ui.css" rel="stylesheet" media="screen">
+    <link href="~/Content/css/select/select2.min.css" rel="stylesheet" />
+    <link href="~/Content/css/select/select2-bootstrap.css" rel="stylesheet" />
+
+
+    <link href="~/Content/css/toastr.css" rel="stylesheet" />
+}
+
+<div class="content-box-large">
+    <div class="panel-heading">
+        <div class="panel-title">
+            <h2>Cadastrar Nova Aquisição de Contrato</h2>
+        </div>
+    </div>
+    <div class="panel-body">
+        <div class="form-group">
+            <label class="control-label col-md-1" for="busca">Busca :</label>
+            <div class="col-md-9">
+                <input type="text" class="form-control" id="busca" name="busca" />
+            </div>
+            <div class="col-md-2">
+                <a href="#" class="btn btn-primary" onclick="Listar();"><i class="glyphicon glyphicon-search"> </i> Buscar</a>
+            </div>
+        </div>
+        <div class="row">
+            <a href="#" class="btn btn-info" onclick="VerificarAgendamento();"><i class="glyphicon glyphicon-plus"> </i>Nova Aquisição</a>
+        </div>
+        <br /><br />
+        <div id="listaraquisicoes"></div>
+    </div>
+</div>
+
+
+@section scripts{
+    <script src="https://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
+    <script src="@Url.Content("~/Scripts/vendors/datatables/js/jquery.dataTables.min.js")"></script>
+    <script src="@Url.Content("~/Scripts/vendors/datatables/dataTables.bootstrap.js")"></script>
+    <script src="@Url.Content("~/Scripts/Sicov/AquisicaoContrato.js")"></script>
+    <script src="@Url.Content("~/Scripts/jquery.validate.js")"></script>
+    <script src="@Url.Content("~/Scripts/toastr.js")"></script>
+    <script src="~/Scripts/select/select2.full.js"></script>
+}
+
+

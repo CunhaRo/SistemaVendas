@@ -1,0 +1,144 @@
+﻿@model Sis_RosangelaCunha.Models.Cliente
+
+<form id="frmCliente">
+
+    @Html.HiddenFor(model => model.ClienteId)
+
+
+    <div class="row">
+        <!-- Nome Fantasia -->
+        <div class="form-group">
+            <div class="col-md-12">
+                <label for="NomeFantasia">*Nome Fantasia :</label>
+                @Html.EditorFor(model => model.NomeFantasia, new { htmlAttributes = new { @class = "form-control" } })
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <!-- Razão Social -->
+        <div class="form-group">
+            <div class="col-md-12">
+                <label for="RazaoSocial">*Razão Social :</label>
+                @Html.EditorFor(model => model.RazaoSocial, new { htmlAttributes = new { @class = "form-control" } })
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <!-- CNPJ -->
+        <div class="form-group">
+            <div class="col-md-6">
+                <label for="Cnpj">*CNPJ :</label>
+                @Html.EditorFor(model => model.Cnpj, new { htmlAttributes = new { @class = "form-control cnpj" } })
+            </div>
+        </div>
+        <div class="form-group">
+            <!-- IE -->
+            <div class="col-md-6">
+                <label for="Ie">Inscrição Estadual :</label>
+                @Html.EditorFor(model => model.Ie, new { htmlAttributes = new { @class = "form-control" } })
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <!-- ResponsavelEmpresa -->
+        <div class="form-group">
+            <div class="col-md-6">
+                <label for="ResponsavelEmpresa">Nome do Responsável :</label>
+                @Html.EditorFor(model => model.ResponsavelEmpresa, new { htmlAttributes = new { @class = "form-control" } })
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-md-6">
+                <label for="CpfResponsavel">CPF Responsável :</label>
+                @Html.EditorFor(model => model.CpfResponsavel, new { htmlAttributes = new { @class = "form-control cpf" } })
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="form-group">
+            <div class="col-md-5">
+                <label for="Cidade">Cidade :</label>
+                @Html.EditorFor(model => model.Cidade, new { htmlAttributes = new { @class = "form-control" } })
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-md-3">
+                <label for="EnumEstado">Estado :</label>
+                @Html.EnumDropDownListFor(model => model.EnumEstado, new { @class = "form-control" })
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-md-4">
+                <label for="Cep">Cep :</label>
+                @Html.EditorFor(model => model.Cep, new { htmlAttributes = new { @class = "form-control cep" } })
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="form-group">
+            <div class="col-md-7">
+                <label for="Endereco">Endereço :</label>
+                @Html.EditorFor(model => model.Endereco, new { htmlAttributes = new { @class = "form-control" } })
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="Bairro">Bairro :</label>
+            <div class="col-md-5">
+                @Html.EditorFor(model => model.Bairro, new { htmlAttributes = new { @class = "form-control" } })
+            </div>
+        </div>
+    </div>
+
+
+    <div class="row">
+
+        <div class="form-group">
+            <div class="col-md-6">
+                <label for="Complemento">Complemento :</label>
+                @Html.EditorFor(model => model.Complemento, new { htmlAttributes = new { @class = "form-control" } })
+            </div>
+        </div>
+        <div class="form-group">
+
+            <div class="col-md-6">
+                <label for="Email">E-mail :</label>
+                @Html.EditorFor(model => model.Email, new { htmlAttributes = new { @class = "form-control" } })
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="form-group">
+
+            <div class="col-md-4">
+                <label for="Telefone1">Telefone Comercial:</label>
+                @Html.EditorFor(model => model.Telefone1, new { htmlAttributes = new { @class = "form-control telefone" } })
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-4">
+                <label for="Telefone2">Telefone:</label>
+                @Html.EditorFor(model => model.Telefone2, new { htmlAttributes = new { @class = "form-control telefone" } })
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-md-4">
+                <label for="Celular">Celular :</label>
+                @Html.EditorFor(model => model.Celular, new { htmlAttributes = new { @class = "form-control telefone" } })
+            </div>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <div class="col-md-12 text-right">
+            <a href="#" class="btn btn-success" onclick="SalvarCliente();"><i class="fa fa-save"></i> Gravar</a>
+        </div>
+    </div>
+
+</form>
